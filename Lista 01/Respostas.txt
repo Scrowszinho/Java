@@ -1,0 +1,11 @@
+10 - a. Fatec.java e Treinamentos.java. 
+11 - b. javac 
+12 - c. java
+13 - a. .java 
+14 - d. Três 
+15 - a. -version
+16 - e. public static void main(String[] args) 
+17 - b. System.out.println("Fatec ") 
+18 - a. \n
+19 - c. //, /* e */
+20 - e. Argumentos e Livros 
