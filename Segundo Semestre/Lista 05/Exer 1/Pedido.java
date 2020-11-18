@@ -7,6 +7,7 @@ public class Pedido {
 		Produto produtos[] = new Produto[100];
 		int quantidade = 0, opcao, quanti = 0;
 		double preco = 0;
+		String ok;
 
 		do {
 
@@ -32,11 +33,11 @@ public class Pedido {
 					produtos[quantidade].setPreco(preco);
 					produtos[quantidade].setQuantidade(quanti);			
 					//
-					System.out.print(">>> Confirma cadastro [S/N]: ");
-					String ok = leia.nextLine();
-					if ( ok.equalsIgnoreCase("s") ) {
-						quantidade++;
-					}
+					// System.out.print(">>> Confirma cadastro [S/N]: ");
+					// ok = leia.nextLine();
+					// if ( ok.equalsIgnoreCase("s") ) {
+					 	quantidade++;
+					// }
 					//
 					break;
 
@@ -45,15 +46,31 @@ public class Pedido {
 					preco = leia.nextDouble();
 					System.out.println("Digite a quantidade: ");
 					quanti = leia.nextInt();
-
+					produtos[quantidade] = new Paozinho(preco, quanti);
+					produtos[quantidade].setPreco(preco);
+					produtos[quantidade].setQuantidade(quanti);			
+					//
+					// System.out.print(">>> Confirma cadastro [S/N]: ");
+					//  ok = leia.nextLine();
+					// if ( ok.equalsIgnoreCase("s") ) {
+						quantidade++;
+					// }
 					break;
 
 				case 3:
-					System.out.println("Digite o preço: ");
-					preco = leia.nextDouble();
-					System.out.println("Digite a quantidade: ");
-					quanti = leia.nextInt();
-
+				System.out.println("Digite o preço: ");
+				preco = leia.nextDouble();
+				System.out.println("Digite a quantidade: ");
+				quanti = leia.nextInt();
+				produtos[quantidade] = new Doces(preco, quanti);
+				produtos[quantidade].setPreco(preco);
+				produtos[quantidade].setQuantidade(quanti);			
+				//
+				// System.out.print(">>> Confirma cadastro [S/N]: ");
+				//  ok = leia.nextLine();
+				// if ( ok.equalsIgnoreCase("s") ) {
+				 	quantidade++;
+				// }
 					break;
 
 				case 4:
@@ -66,7 +83,11 @@ public class Pedido {
 			}
 
 		} while (opcao >= 1 && opcao < 4);
-
+		for ( int i = 0 ; i < quantidade ; i++ ) {
+			if ( produtos[i] != null ) {
+				System.out.println( produtos[i] );
+			}
+		}
 		leia.close();
 	}
 }
