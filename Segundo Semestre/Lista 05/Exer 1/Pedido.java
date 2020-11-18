@@ -6,9 +6,7 @@ public class Pedido {
 		Scanner leia = new Scanner(System.in);
 		Produto produtos[] = new Produto[100];
 		int quantidade = 0, opcao, quanti = 0;
-		double preco = 0;
-		String ok;
-
+		double preco = 0, total = 0;
 		do {
 
 			System.out.println("=========================");
@@ -31,46 +29,33 @@ public class Pedido {
 					quanti = leia.nextInt();
 					produtos[quantidade] = new Frios(preco, quanti);
 					produtos[quantidade].setPreco(preco);
-					produtos[quantidade].setQuantidade(quanti);			
-					//
-					// System.out.print(">>> Confirma cadastro [S/N]: ");
-					// ok = leia.nextLine();
-					// if ( ok.equalsIgnoreCase("s") ) {
-					 	quantidade++;
-					// }
-					//
+					produtos[quantidade].setQuantidade(quanti);	
+					total +=preco*quanti;		
+					quantidade++;
 					break;
 
 				case 2:
-					System.out.println("Digite o preço: ");
+					System.out.print("Digite o preço: ");
 					preco = leia.nextDouble();
-					System.out.println("Digite a quantidade: ");
+					System.out.print("Digite a quantidade: ");
 					quanti = leia.nextInt();
 					produtos[quantidade] = new Paozinho(preco, quanti);
 					produtos[quantidade].setPreco(preco);
 					produtos[quantidade].setQuantidade(quanti);			
-					//
-					// System.out.print(">>> Confirma cadastro [S/N]: ");
-					//  ok = leia.nextLine();
-					// if ( ok.equalsIgnoreCase("s") ) {
-						quantidade++;
-					// }
+					total +=preco*quanti;	
+					quantidade++;
 					break;
 
 				case 3:
-				System.out.println("Digite o preço: ");
+				System.out.print("Digite o preço: ");
 				preco = leia.nextDouble();
-				System.out.println("Digite a quantidade: ");
+				System.out.print("Digite a quantidade: ");
 				quanti = leia.nextInt();
 				produtos[quantidade] = new Doces(preco, quanti);
 				produtos[quantidade].setPreco(preco);
 				produtos[quantidade].setQuantidade(quanti);			
-				//
-				// System.out.print(">>> Confirma cadastro [S/N]: ");
-				//  ok = leia.nextLine();
-				// if ( ok.equalsIgnoreCase("s") ) {
-				 	quantidade++;
-				// }
+				total +=preco*quanti;	
+				quantidade++;
 					break;
 
 				case 4:
@@ -88,6 +73,8 @@ public class Pedido {
 				System.out.println( produtos[i] );
 			}
 		}
+		System.out.println("Total do pedido:R$ "+total);
 		leia.close();
 	}
+
 }
