@@ -4,8 +4,11 @@ public class Floresta {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
+		Scanner leiaStrg = new Scanner(System.in);
 		Plantas floresta[] = new Plantas[100];
 		int quantidade = 0, opcao;
+		int contador[] = new int[4];
+		String fore[] = {"Arvore", "Flor", "Carnivora"};
 		String nome, especie, cor, frutifera, venenosa;
 		do {
 
@@ -26,44 +29,47 @@ public class Floresta {
 				case 1:
 
 					System.out.print("Digite o nome: ");
-					nome = leia.nextLine();
+					nome = leiaStrg.nextLine();
 					System.out.print("Digite a especie: ");
-					especie = leia.nextLine();
+					especie = leiaStrg.nextLine();
 					System.out.print("É frutifera? [s/n]: ");
-					frutifera = leia.nextLine();
+					frutifera = leiaStrg.nextLine();
 					floresta[quantidade] = new Arvore(nome, especie, frutifera);
 					floresta[quantidade].setNome(nome);
 					floresta[quantidade].setEspecie(especie);
 					quantidade++;
+					contador[0]++;
 					break;
 
 				case 2:
 
 				
 				System.out.print("Digite o nome: ");
-				nome = leia.nextLine();
+				nome = leiaStrg.nextLine();
 				System.out.print("Digite a especie: ");
-				especie = leia.nextLine();
+				especie = leiaStrg.nextLine();
 				System.out.print("Digite a cor: ");
-				cor = leia.nextLine();
+				cor = leiaStrg.nextLine();
 				floresta[quantidade] = new Flor(nome, especie, cor);
 				floresta[quantidade].setNome(nome);
 				floresta[quantidade].setEspecie(especie);
 				quantidade++;
+				contador[1]++;
 
 					break;
 
 				case 3:
 				System.out.print("Digite o nome: ");
-				nome = leia.nextLine();
+				nome = leiaStrg.nextLine();
 				System.out.print("Digite a especie: ");
-				especie = leia.nextLine();
+				especie = leiaStrg.nextLine();
 				System.out.print("É venenosa? [s/n]: ");
-				venenosa = leia.nextLine();
+				venenosa = leiaStrg.next();
 				floresta[quantidade] = new Flor(nome, especie, venenosa);
 				floresta[quantidade].setNome(nome);
 				floresta[quantidade].setEspecie(especie);
 				quantidade++;
+				contador[2]++;
 					break;
 
 				case 4:
@@ -75,7 +81,13 @@ public class Floresta {
 					break;
 
 				case 5:
-					
+				for ( int i = 0 ; i < 3 ; i++ ) {
+					if ( floresta[i] != null ) {
+					System.out.println(fore[i]+": "+contador[i]);
+					contador[3] += contador[i];
+				}
+				}
+				System.out.println("Total de plantas: "+contador[3]);
 					break;
 
 				case 6:
@@ -87,9 +99,10 @@ public class Floresta {
 					opcao = 1;
 			}
 
-		} while (opcao >= 1 && opcao < 4);
+		} while (opcao >= 1 && opcao < 6);
 
 		leia.close();
+		leiaStrg.close();
 	}
 
 }
