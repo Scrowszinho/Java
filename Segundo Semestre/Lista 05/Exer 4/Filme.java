@@ -1,29 +1,17 @@
 public class Filme extends Midia{
     private String classificacao;
     private int duracao;
+
+    public Filme(int id,String titulo,String tipo,String genero, double valor, 
+                String classificacao, int duracao){
+        super(id,titulo,tipo,genero,valor);
+        this.classificacao = classificacao;
+        this.duracao = duracao;
+    }
+
+   
+
     
-    public Filme(String nome, String especie, String frutifera){
-        super(nome, especie);
-        setNome(nome);
-        setEspecie(especie);
-        this.frutifera = frutifera;
-    }
-
-    public void setDeta(String nome, String especie, String frutifera){
-        setNome(nome);
-        setEspecie(especie);
-        this.frutifera = frutifera;
-    }
-
-    public String getNome() {
-        return getNome();
-    }
-    public String getEspecie() {
-        return getEspecie();
-    }
-    public String getFrutifera(){
-        return this.frutifera;
-    }
 
 
 }
