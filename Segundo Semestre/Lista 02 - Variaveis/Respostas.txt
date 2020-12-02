@@ -1,0 +1,1 @@
+7 - Respostas : a) String b)Int, char,long,short,byte c)float, double, d)boolean e) Int, char,long,short f)float g)char h)long
