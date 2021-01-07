@@ -1,6 +1,6 @@
 # Java ☕
 
-<img src="./.github/java.png" width=400 height=400>
+<img src="./.github/java.png" width="200" height="100">
 
 <br />
 PT-BR - Português(Brasil)
